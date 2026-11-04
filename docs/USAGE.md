@@ -34,7 +34,7 @@ powershell -ExecutionPolicy Bypass -File tools\flash.ps1 -Port COM3
 ### CI
 
 GitHub Actions собирает прошивку на каждый пуш, готовые `.bin` лежат в артефактах сборки
-(вкладка Actions, артефакт `firmware`). [Открыть сборки](https://github.com/turbovanya/HMS-v1---home-meteostation-esp32s3/actions/workflows/build.yml)
+(вкладка Actions, артефакт `firmware`). [Открыть сборки](https://github.com/turbovanya/HMS-esp32s3/actions/workflows/build.yml)
 
 ## Команды по USB
 

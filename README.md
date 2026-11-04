@@ -6,7 +6,7 @@
 
 [Экран и деморежим](#экран-и-деморежим) · [Компоненты](docs/COMPONENTS.md) · [Схема](docs/HARDWARE.md) · [Сборка](docs/USAGE.md) · [Архитектура](docs/ARCHITECTURE.md)
 
-[![Сборка прошивки](https://github.com/turbovanya/HMS-v1---home-meteostation-esp32s3/actions/workflows/build.yml/badge.svg)](https://github.com/turbovanya/HMS-v1---home-meteostation-esp32s3/actions/workflows/build.yml)
+[![Сборка прошивки](https://github.com/turbovanya/HMS-esp32s3/actions/workflows/build.yml/badge.svg)](https://github.com/turbovanya/HMS-esp32s3/actions/workflows/build.yml)
 
 ## Экран и деморежим
 
@@ -38,4 +38,4 @@
 | [Компоненты](docs/COMPONENTS.md) | Назначение, диапазоны, точность, питание и паспорта датчиков |
 | [Схема подключения](docs/HARDWARE.md) | Распиновка из прошивки, питание и проверка первого запуска |
 | [Сборка и эксплуатация](docs/USAGE.md) | Arduino IDE, параметры платы, команды USB и демонстрационные кадры |
-| [Готовые сборки](https://github.com/turbovanya/HMS-v1---home-meteostation-esp32s3/actions/workflows/build.yml) | Бинарные файлы в артефакте `firmware` успешного запуска GitHub Actions |
+| [Готовые сборки](https://github.com/turbovanya/HMS-esp32s3/actions/workflows/build.yml) | Бинарные файлы в артефакте `firmware` успешного запуска GitHub Actions |
