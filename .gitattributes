@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+# Windows PowerShell 5.1 читает скрипты корректно только с CRLF и BOM
+*.ps1 text eol=crlf
+
+*.bin binary
+*.png binary

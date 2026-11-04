@@ -1,0 +1,16 @@
+# Сборка
+build/
+
+# Рабочие снимки экрана (для документации кладём в docs/images)
+shots/
+
+# Копия прошивки с платы, совпадает с legacy/sketch_jul20a/sketch_jul20a.ino.bin
+legacy/device_app.bin
+
+# Редакторы и система
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store

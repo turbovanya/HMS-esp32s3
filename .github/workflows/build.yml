@@ -1,0 +1,58 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  FQBN: esp32:esp32:esp32s3:USBMode=hwcdc,CDCOnBoot=cdc,FlashSize=4M,PartitionScheme=default,PSRAM=disabled,CPUFreq=240,FlashMode=qio
+
+jobs:
+  firmware:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: arduino/setup-arduino-cli@v2
+
+      - name: Cache Arduino data
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.arduino15
+            ~/Arduino/libraries
+          key: arduino-esp32-2.0.17-${{ hashFiles('.github/workflows/build.yml') }}
+
+      - name: Install core
+        run: |
+          arduino-cli config init --overwrite
+          arduino-cli config add board_manager.additional_urls https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli core update-index
+          arduino-cli core install esp32:esp32@2.0.17
+
+      - name: Install libraries
+        run: |
+          arduino-cli lib install \
+            "Adafruit GFX Library@1.12.6" \
+            "Adafruit ST7735 and ST7789 Library@1.11.0" \
+            "Adafruit SHT4x Library@1.0.5" \
+            "Adafruit BMP280 Library@3.0.0" \
+            "Adafruit BusIO@1.17.4" \
+            "Adafruit Unified Sensor@1.1.15" \
+            "Sensirion Core@0.7.3" \
+            "Sensirion I2C SGP40@0.1.0" \
+            "Sensirion Gas Index Algorithm@3.2.3"
+
+      - name: Compile
+        run: arduino-cli compile --fqbn "$FQBN" --build-path build --warnings default MeteoStation
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware
+          path: |
+            build/MeteoStation.ino.bin
+            build/MeteoStation.ino.bootloader.bin
+            build/MeteoStation.ino.partitions.bin
+          if-no-files-found: error
