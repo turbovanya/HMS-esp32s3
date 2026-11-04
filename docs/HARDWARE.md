@@ -1,6 +1,6 @@
 # Компоненты и подключение HMS
 
-[Вернуться к проекту](../README.md) · [Открыть прошивку](../MeteoStation/MeteoStation.ino) · [Как устроен интерфейс](ARCHITECTURE.md)
+[Вернуться к проекту](../README.md) · [Характеристики компонентов](COMPONENTS.md) · [Открыть прошивку](../MeteoStation/MeteoStation.ino) · [Как устроен интерфейс](ARCHITECTURE.md)
 
 ![Схема подключения HMS с GPIO, направлениями UART и питанием модулей](images/wiring.svg)
 
