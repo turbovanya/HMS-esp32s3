@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="730" viewBox="0 0 1120 730" role="img" aria-labelledby="title desc">
+<title id="title">HMS: схема подключения ESP32-S3</title>
+<desc id="desc">Распиновка дисплея, общей шины I2C, датчиков CO2 и пыли. Напряжения питания указаны отдельно от логических уровней.</desc>
+<g font-family="Segoe UI, DejaVu Sans, sans-serif">
+<rect x="0" y="0" width="1120" height="730" rx="24" fill="#0a1422" stroke="none"/>
+<text x="28" y="38" font-size="15" fill="#6be2bc" font-weight="700">HMS  /  АППАРАТНАЯ ЧАСТЬ</text>
+<text x="27" y="86" font-size="37" fill="#f1f7ff" font-weight="750">Схема подключения ESP32-S3</text>
+<text x="29" y="116" font-size="17" fill="#d8e5f2" font-weight="500">GPIO платы слева, контакты модулей справа. Стрелки показывают направление данных.</text>
+<rect x="28" y="137" width="520" height="232" rx="18" fill="#111e2e" stroke="#2c4156"/>
+<rect x="50" y="159" width="5" height="27" rx="2" fill="#61b8ff" stroke="none"/>
+<text x="65" y="181" font-size="24" fill="#f1f7ff" font-weight="700">Дисплей ST7789V</text>
+<text x="392" y="180" font-size="15" fill="#61b8ff" font-weight="700">SPI · 40 МГц</text>
+<text x="55" y="218" font-size="17" fill="#edf5ff" font-weight="650">GPIO35 →</text>
+<text x="228" y="218" font-size="17" fill="#c2d3e4" font-weight="500">MOSI / SDA</text>
+<text x="55" y="243" font-size="17" fill="#edf5ff" font-weight="650">GPIO36 →</text>
+<text x="228" y="243" font-size="17" fill="#c2d3e4" font-weight="500">SCK / SCL</text>
+<text x="55" y="268" font-size="17" fill="#edf5ff" font-weight="650">GPIO37 →</text>
+<text x="228" y="268" font-size="17" fill="#c2d3e4" font-weight="500">CS</text>
+<text x="55" y="293" font-size="17" fill="#edf5ff" font-weight="650">GPIO38 →</text>
+<text x="228" y="293" font-size="17" fill="#c2d3e4" font-weight="500">DC</text>
+<text x="55" y="318" font-size="17" fill="#edf5ff" font-weight="650">GPIO39 →</text>
+<text x="228" y="318" font-size="17" fill="#c2d3e4" font-weight="500">RST / RES</text>
+<text x="55" y="355" font-size="15" fill="#61b8ff" font-weight="600">Питание 3,3 В · VCC и BLK¹</text>
+<rect x="572" y="137" width="520" height="232" rx="18" fill="#111e2e" stroke="#2c4156"/>
+<rect x="594" y="159" width="5" height="27" rx="2" fill="#6be2bc" stroke="none"/>
+<text x="609" y="181" font-size="24" fill="#f1f7ff" font-weight="700">Датчики климата и VOC</text>
+<text x="936" y="180" font-size="15" fill="#6be2bc" font-weight="700">I²C</text>
+<text x="599" y="218" font-size="17" fill="#edf5ff" font-weight="650">GPIO41 ↔</text>
+<text x="772" y="218" font-size="17" fill="#c2d3e4" font-weight="500">SDA всех трёх модулей</text>
+<text x="599" y="243" font-size="17" fill="#edf5ff" font-weight="650">GPIO42 →</text>
+<text x="772" y="243" font-size="17" fill="#c2d3e4" font-weight="500">SCL всех трёх модулей</text>
+<text x="599" y="268" font-size="17" fill="#edf5ff" font-weight="650">SHT40 · 0x44</text>
+<text x="772" y="268" font-size="17" fill="#c2d3e4" font-weight="500">Температура и влажность</text>
+<text x="599" y="293" font-size="17" fill="#edf5ff" font-weight="650">BMP280 · 0x76</text>
+<text x="772" y="293" font-size="17" fill="#c2d3e4" font-weight="500">Атмосферное давление</text>
+<text x="599" y="318" font-size="17" fill="#edf5ff" font-weight="650">SGP40 · 0x59</text>
+<text x="772" y="318" font-size="17" fill="#c2d3e4" font-weight="500">Индекс VOC</text>
+<text x="599" y="355" font-size="15" fill="#6be2bc" font-weight="600">Питание 3,3 В · модули параллельно</text>
+<rect x="28" y="387" width="520" height="232" rx="18" fill="#111e2e" stroke="#2c4156"/>
+<rect x="50" y="409" width="5" height="27" rx="2" fill="#f7c872" stroke="none"/>
+<text x="65" y="431" font-size="24" fill="#f1f7ff" font-weight="700">Датчик CO₂ MH-Z19B</text>
+<text x="392" y="430" font-size="15" fill="#f7c872" font-weight="700">UART2 · 9600</text>
+<text x="55" y="468" font-size="17" fill="#edf5ff" font-weight="650">GPIO16 (RX) ←</text>
+<text x="228" y="468" font-size="17" fill="#c2d3e4" font-weight="500">TXD</text>
+<text x="55" y="493" font-size="17" fill="#edf5ff" font-weight="650">GPIO15 (TX) →</text>
+<text x="228" y="493" font-size="17" fill="#c2d3e4" font-weight="500">RXD</text>
+<text x="55" y="518" font-size="17" fill="#edf5ff" font-weight="650">+5 В →</text>
+<text x="228" y="518" font-size="17" fill="#c2d3e4" font-weight="500">Vin</text>
+<text x="55" y="543" font-size="17" fill="#edf5ff" font-weight="650">GND ↔</text>
+<text x="228" y="543" font-size="17" fill="#c2d3e4" font-weight="500">GND</text>
+<text x="55" y="592" font-size="15" fill="#f7c872" font-weight="600">Питание 5 В · логика UART 3,3 В</text>
+<rect x="572" y="387" width="520" height="232" rx="18" fill="#111e2e" stroke="#2c4156"/>
+<rect x="594" y="409" width="5" height="27" rx="2" fill="#c0a7ff" stroke="none"/>
+<text x="609" y="431" font-size="24" fill="#f1f7ff" font-weight="700">Датчик пыли PMS7003</text>
+<text x="936" y="430" font-size="15" fill="#c0a7ff" font-weight="700">UART1 · 9600</text>
+<text x="599" y="468" font-size="17" fill="#edf5ff" font-weight="650">GPIO2 (RX) ←</text>
+<text x="772" y="468" font-size="17" fill="#c2d3e4" font-weight="500">TXD · контакт 9</text>
+<text x="599" y="493" font-size="17" fill="#edf5ff" font-weight="650">+5 В →</text>
+<text x="772" y="493" font-size="17" fill="#c2d3e4" font-weight="500">VCC · контакты 1 и 2</text>
+<text x="599" y="518" font-size="17" fill="#edf5ff" font-weight="650">GND ↔</text>
+<text x="772" y="518" font-size="17" fill="#c2d3e4" font-weight="500">GND · контакты 3 и 4</text>
+<text x="599" y="543" font-size="17" fill="#edf5ff" font-weight="650">RXD / SET / RESET</text>
+<text x="772" y="543" font-size="17" fill="#c2d3e4" font-weight="500">Без подключения</text>
+<text x="599" y="592" font-size="15" fill="#c0a7ff" font-weight="600">Питание 5 В · логика UART 3,3 В</text>
+<rect x="28" y="639" width="1064" height="66" rx="14" fill="#172638" stroke="#30485f"/>
+<text x="49" y="664" font-size="17" fill="#f1f7ff" font-weight="650">Общий GND для ESP32-S3 и всех модулей. На GPIO подаётся только логика 3,3 В.</text>
+<text x="49" y="689" font-size="15" fill="#d8e5f2" font-weight="500">¹ BLK показан для модуля с подсветкой, рассчитанной на прямое питание от 3,3 В.</text>
+</g>
+</svg>
